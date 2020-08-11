@@ -4,7 +4,7 @@ import { ITrans } from "../types/TypeCast";
 import axios from 'axios';
 import firebase from 'firebase';
 import { permissionToReceiveNotifications } from './../push-notification';
-
+// import 'firebase/<PACKAGE>';
 
 export const AddTransaction = () => {
     const [text, setText] = useState("");
@@ -21,14 +21,14 @@ export const AddTransaction = () => {
     function onSubmit(e: React.MouseEvent<HTMLButtonElement>) {
         e.preventDefault();
 
-        if (text.length < 3 || text.length > 20) {
-            alert("Please Enter Some Text");
+        if ((text.length < 3 || text.length > 20) && +amount === 0) {
+            alert("Please Enter Some Text or Correct Value");
             return false;
         }
-        if (+amount === 0) {
-            alert("Please Enter Correct Value");
-            return false;
-        }
+        // if (+amount === 0) {
+        //     alert("Please Enter Correct Value");
+        //     return false;
+        // }
         const newTransition = {
             id: Math.floor(Math.random() * 100000000),
             text,
@@ -41,12 +41,6 @@ export const AddTransaction = () => {
         setTimeout(sendNotification, 5000);
 
     };
-
-    const NotificationButton = () => (
-        <button className="Button" onClick={permissionToReceiveNotifications} >
-            Allow Notifications ?
-        </button>
-    );
 
     async function sendNotification() {
         const messaging = firebase.messaging();
@@ -63,14 +57,14 @@ export const AddTransaction = () => {
                 },
                 "to": token
             },
-            { headers: { 'Content-Type': 'application/json', 'Authorization': 'key=AAAAatDjAFI:APA91bHtPg63Cjow-epJylmEDat4coQLbY_p0luqVRjYT4Rlfy0eFH2CMP386gpKyUT4KF_oQlVgrPht9PQVnJ1WIVzc5KHo_MWzja-tRkC1QsMnqHso6tc4bBuHU8brfcXbrbpcvuTV' } }
+            { headers: { 'Content-Type': 'application/json', 'Authorization': 'key=AAAAOAQtDX0:APA91bFLWJSA1RNM6silscM6kYJW7nnFlcHUb5TZjDRdg8KT7zXeeLBOXmBYGcdtR3SEdsy36rbm2auVhgVLMWSZiuEQ9Oc3IcCrBe3m1kcYaMrctWD85ir2_MmhKa5oDsjUHhNCRsvM' } }
         );
         console.log('Response: ', response);
     }
 
     return (
         <>
-            <h3>Add new transaction</h3>
+            <h3>Add New Transaction</h3>
             <form id="form" >
                 <div className="form-control">
                     <label htmlFor="text">Text</label>
@@ -95,13 +89,15 @@ export const AddTransaction = () => {
                         placeholder="Enter amount..."
                     />
                 </div>
-                <NotificationButton />
-                <button className="btn" onClick={onSubmit}>Add transaction</button>
+                <button className="btn" onClick={onSubmit}>Add Transaction</button>
+                <button className="btn" onClick={permissionToReceiveNotifications} >
+                    Allow Notifications ?
+                </button>
                 <div className="copyRight box_shadow">
                     <h5> Powered by Ahmed Raza </h5>
                     <a href="https://github.com/ahmedraza17260" rel="noopener noreferrer ">
-                        {" "}
-                        <h5> Copyright &copy; 2020 Ahmed Raza </h5>{" "}
+
+                        <h5> Copyright &copy; 2020 Ahmed Raza </h5>
                     </a>
                     <h5> All Right Reserved </h5>
                 </div>

@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import { initializeFirebase } from './push-notification';
 import * as serviceWorker from './serviceWorker';
+// import 'firebase/<PACKAGE>';
 
 ReactDOM.render(
   <React.StrictMode>
