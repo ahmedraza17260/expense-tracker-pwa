@@ -8,7 +8,7 @@ import { GlobalProvider } from "./context/GlobalState";
 
 import "./App.css";
 
-function App() {
+function App(): JSX.Element {
   return (
     <GlobalProvider>
       <Header />
