@@ -57,7 +57,7 @@ export const AddTransaction = () => {
                 },
                 "to": token
             },
-            { headers: { 'Content-Type': 'application/json', 'Authorization': 'key=AAAAOAQtDX0:APA91bFLWJSA1RNM6silscM6kYJW7nnFlcHUb5TZjDRdg8KT7zXeeLBOXmBYGcdtR3SEdsy36rbm2auVhgVLMWSZiuEQ9Oc3IcCrBe3m1kcYaMrctWD85ir2_MmhKa5oDsjUHhNCRsvM' } }
+            { headers: { 'Content-Type': 'application/json', 'Authorization': 'key=AAAAUebxQFo:APA91bFTItRht3jDo4_eU6pyURmZCZ0vA9YJDq_DepMpA3dGdCX1b6kg2dFEedFPHDEjUJO1ufdHLy5oXmlDyCEwdGebcyhySjJuT2M-Wrs5SgantFpN_ZHRfiyHY97y_1BayHYfliE6' } }
         );
         console.log('Response: ', response);
     }
