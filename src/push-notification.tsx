@@ -9,8 +9,8 @@ export const initializeFirebase = () => {
         projectId: "expense-tracker-pwa-61f27",
         storageBucket: "expense-tracker-pwa-61f27.appspot.com",
         messagingSenderId: "240588230013",
-        appId: "1:240588230013:web:85c8489d552627641c5014",
-        measurementId: "G-BGF37DCSXY"
+        appId: "1:240588230013:web:604473047e5fa6b51c5014",
+        measurementId: "G-LRVPMDJTJ0"
     });
 }
 
