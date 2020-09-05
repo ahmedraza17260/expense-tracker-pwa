@@ -1,6 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-![Expense-Tracker App](public/expense.jpg)
+![Expense-Tracker App](public/expencse.jpg)
 
 ## Available Scripts
 
